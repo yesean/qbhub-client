@@ -1,5 +1,5 @@
 import { HamburgerIcon, SettingsIcon, TimeIcon } from '@chakra-ui/icons';
-import { Box, Flex, Heading, IconButton } from '@chakra-ui/react';
+import { Box, Flex, Heading, Link, IconButton } from '@chakra-ui/react';
 import { useLocation } from 'react-router-dom';
 import { useAppDispatch } from '../../app/hooks';
 import { open as openSettings } from '../../Settings/settingsSlice';
@@ -34,7 +34,14 @@ const Header: React.FC = () => {
   return (
     <Box p={3} mb={2}>
       <Flex justify="space-between" align="center">
-        <Heading d="inline">QBHub</Heading>
+        <Link 
+          href={ROUTES.reader.tossup}
+          _hover={{ textDecoration: 'none'}}
+        >
+          <Heading>
+            QBHub
+          </Heading>
+        </Link>
         <Box>
           {renderHistory()}
           <IconButton
